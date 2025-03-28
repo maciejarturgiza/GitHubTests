@@ -12,14 +12,11 @@ def test_create_output_file():
     """Test the create_output_file function."""
     file_path = create_output_file()
     
-    # Check if file was created
     assert os.path.exists(file_path)
     
-    # Check file contents
     with open(file_path, 'r') as f:
         content = f.read()
     
     assert "This file was created by the Python script" in content
     
-    # Clean up the file after test
     os.remove(file_path)
