@@ -6,12 +6,13 @@ jobs:
   test:
     strategy:
       matrix:
-        - python-version: 3.12
-          os: ubuntu-22.04
-        - python-version: 3.10
-          os: ubuntu-20.04
-        - python-version: 3.11
-          os: ubuntu-22.04
+        include:
+          - python-version: 3.12
+            os: ubuntu-22.04
+          - python-version: 3.10
+            os: ubuntu-20.04
+          - python-version: 3.11
+            os: ubuntu-22.04
     runs-on: ${{ matrix.os }}
     
     steps:
